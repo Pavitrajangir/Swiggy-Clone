@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 function OnYourMind({data = []}) {
-    // const [data, setData] = useState([]);
 
     const [value, setValue] = useState(0);
 
@@ -20,7 +19,7 @@ function OnYourMind({data = []}) {
     // console.log(value);
 
     function handleNext() {
-        value >= 124 ? "" : setValue((prev) => prev + 31);
+        value >= 246 ? "" : setValue((prev) => prev + 31);
     }
 
     function handlePrev() {
@@ -30,7 +29,9 @@ function OnYourMind({data = []}) {
     return (
         <div className="">
             <div className='flex justify-between mt-5'>
-                <h1 className="font-bold text-2xl">What's on your mind?</h1>
+                <h1 className="font-bold text-2xl">
+                    What's on your mind?
+                </h1>
                 <div className="flex gap-3">
                     <div
                         onClick={handlePrev}
@@ -50,7 +51,7 @@ function OnYourMind({data = []}) {
                         onClick={handleNext}
                         className={
                             ` cursor-pointer rounded-full w-9 h-9 flex justify-center items-center ` +
-                            (value >= 124 ? "bg-gray-100" : "bg-gray-200")
+                            (value >= 246 ? "bg-gray-100" : "bg-gray-200")
                         }
                     >
                         <i
@@ -65,7 +66,7 @@ function OnYourMind({data = []}) {
 
             <div
                 style={{ translate: `-${value}%` }}
-                className={`flex mt-4  duration-300 `}
+                className={`flex mt-4 gap-12  duration-300 `}
             >
                 {data.map((item) => (
                     <img
